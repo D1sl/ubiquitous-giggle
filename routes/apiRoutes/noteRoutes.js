@@ -27,11 +27,6 @@ router.post('/notes', (req, res) => {
 
 });
 
-// Wildcard - serves index.html when the user enters an address that doesn't match any of the other HTML routes.
-router.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/index.html'));
-})
-
 // API request for deleting entries
 router.delete('/notes/:id', (req, res) => {
     removeNote(req.params.id, notes);

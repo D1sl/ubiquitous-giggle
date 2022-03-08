@@ -1,17 +1,19 @@
-// const path = require('path');
-// const router = require('express').Router();
+const path = require('path');
+const router = require('express').Router();
 
-// router.get('/notes', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../../public/notes.html'));
-// })
+// Serves notes.html
+router.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/notes.html'));
+})
 
-// router.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../../public/index.html'));
-// })
+// Serves the index
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/index.html'));
+})
 
-// // Wildcard
-// router.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../../public/index.html'));
-// })
+// Wildcard when user inputs anything else
+router.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/index.html'));
+})
 
-// module.exports = router;
+module.exports = router;
